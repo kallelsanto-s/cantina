@@ -1,0 +1,121 @@
+/* Cantina do Campus: arquivo com seis erros corrigidos. */
+
+/* Correção 3 (Box Model): Reset universal para que padding/border não estourem a largura */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+  background: #ffffff;
+}
+
+/* ---------- Topo ---------- */
+/* Passo 4 (Flexbox): Alinha a marca de um lado e o menu do outro */
+.topo {
+  background: #14213d;
+  color: #ffffff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.marca {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Coloca os itens do menu lado a lado */
+  gap: 20px;
+}
+
+/* Correção 6 (Alinhamento): Removido margin-left: 610px */
+.menu li {
+  margin-left: 0;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Correção 5 (Foco): Removido outline: none para manter o foco visível via Tab */
+.menu a:focus {
+  outline: 2px solid #fca311;
+  outline-offset: 4px;
+}
+
+/* ---------- Conteúdo ---------- */
+.conteudo {
+  padding: 24px;
+}
+
+/* Correção 1 (Cascata): Removido o !important */
+h1 {
+  color: #14213d;
+  margin-top: 0;
+}
+
+/* Correção 4 (Contraste): Alterado #c4c4c4 para #595959 (contraste >= 4.5:1) */
+.subtitulo {
+  color: #595959;
+}
+
+/* ---------- Cartões ---------- */
+/* Passo 4 (Flexbox): Organiza os cartões em grade e permite quebrar linha */
+.cartoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cartao {
+  flex: 1 1 250px; /* Substitui width: 100% para os cartões ficarem lado a lado */
+  padding: 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.cartao h3 {
+  margin: 0 0 6px;
+}
+
+/* Ajuste de seletor para não inflar especificidade acima do necessário */
+.preco {
+  font-weight: bold;
+  color: #14213d;
+}
+
+/* Correção 2 (Especificidade): Seletor alinhado para garantir o preço vermelho */
+#cardapio .preco.promocao,
+.preco.promocao {
+  color: #b91c1c;
+}
+
+/* ---------- Botão e rodapé ---------- */
+.botao {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #fca311;
+  color: #14213d;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.rodape {
+  background: #14213d;
+  color: #c7cee0;
+  padding: 16px 24px;
+  text-align: center;
+}
